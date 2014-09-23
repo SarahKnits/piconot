@@ -1,3 +1,6 @@
+(* Hayden Blauzvern and Sarah Gilkinson *)
+(* Team Seven *)
+
 direction to move = "N" | "E" | "W" | "S" | "X";
 
 north option = "N" | "x" | "*";

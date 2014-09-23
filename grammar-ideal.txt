@@ -1,3 +1,6 @@
+(* Hayden Blauzvern and Sarah Gilkinson *)
+(* Team Seven *)
+
 direction to move = "Uptown" | "Outta town" | "Into town" | "Downtown"
 ability = "can" | "can't"
 go = "go", space, direction to move, space, "on" | "teleport", space, "to"
