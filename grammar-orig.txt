@@ -1,0 +1,22 @@
+direction to move = "N" | "E" | "W" | "S" | "X";
+
+north option = "N" | "x" | "*";
+east option = "E" | "x" | "*";
+west option = "W" | "x" | "*";
+south option = "S" | "x" | "*";
+
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
+number = {digit};
+
+arrow = "->";
+space = " ";
+new line = "\n";
+hash = "#";
+
+all characters = ? all visible characters ?;
+
+command = number, space, north option, east option, west option, south option, space, arrow, 
+          space, direction to move, space, number, new line;
+comment =  hash, {all characters}, new line;
+
+program = {command | comment | new line};
