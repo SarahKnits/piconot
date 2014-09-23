@@ -1,0 +1,20 @@
+Hayden Blauzvern and Sarah Gilkinson
+Team Seven
+
+Our language attempts to place Picobot in a map of a town. The instructions are
+easy to understand due to their correspondence with real world activities. 
+
+Each instruction specifies the street you are currently on (state), the paths
+available or blocked around you (walls or empty space), the direction to go,
+and the street to move to (new state). We do not intend to require all
+instructions, but will treat any missing directional instruction as "*" in the 
+original Picobot commands. We believe this will make the language more natural,
+as one would normally say "if you can go north, go north" rather than "if you
+can go north and I don't care if you can go east, go north."
+
+This language design lends itself nicely to a visual representation. It also
+translates neatly to the original Picobot command structure, while being more 
+natural to write commands. 
+
+We also considered using colors rather than streets, and believe that our 
+language could be easily changed to fit with that as well. 
