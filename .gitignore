@@ -4,4 +4,5 @@ target
 .classpath
 .history
 .project
+/src/.idea
 .idea/*
