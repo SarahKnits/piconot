@@ -1,7 +1,12 @@
 Hayden Blauzvern and Sarah Gilkinson
+Team 7
 
 In the course of writing our program, we found that separating our terms with
 spaces resulted in fine behavior for the first two, but then broke. Because
 of this, we found we needed to add periods between each pair of words. We also
-found that we need to have quotes around the street names we are passing in.
+found that we need to have quotes and parentheses around the street names we are
+passing in. The directions were changed to be a single word by adding an
+underscore where we originally had spaces, and can't was changed to cannot. 
 
+We removed the special comments starting with # and instead just used the 
+standard Scala comments. 

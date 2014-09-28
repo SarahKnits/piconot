@@ -1,5 +1,9 @@
 package piconot
 
+/*
+ * Authors: Hayden Blauzvern and Sarah Gilkinson
+ */
+
 import java.io.File
 
 import PiconotGrammar._
@@ -9,7 +13,9 @@ import piconot.PiconotGrammar.rules
 
 import scalafx.application.JFXApp
 
-
+/*
+ * Instruction set to complete a maze using the right hand rule
+ */
 object RightHand extends JFXApp {
 
   val rightHandMaze = Maze("resources" + File.separator + "maze.txt")
@@ -34,8 +40,8 @@ object RightHand extends JFXApp {
   If. you. are. on("Fourth")("St."). and. cannot. go. into_town. and. cannot. go. downtown. and. can. go. outta_town. then. go. outta_town. on("Second")("St.")
   If. you. are. on("Fourth")("St."). and. cannot. go. into_town. and. cannot. go. downtown. and. cannot. go. outta_town. and. can. go. uptown. then. go. uptown. on("Main")("St.")
 
-  object EmptyBot extends Picobot(rightHandMaze, rules)
+  object RightHandBot extends Picobot(rightHandMaze, rules)
   with TextDisplay with GUIDisplay
 
-  stage = EmptyBot.mainStage
+  stage = RightHandBot.mainStage
 }

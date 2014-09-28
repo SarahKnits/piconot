@@ -1,10 +1,21 @@
 package piconot
 
+/*
+ * Authors: Hayden Blauzvern and Sarah Gilkinson
+ */
+
 import picolib.semantics._
 
+/*
+ * Defines the grammar outlined in grammar-actual.txt
+ * Implemented with A LOT of objects
+ */
 object PiconotGrammar {
 
+  // Set of publicly available picobot rules
   var rules: List[Rule] = List()
+
+  // Mapping from user defined states to picobot states
   var streetsToStates: Map[String, String] = Map()
 
   object If {
@@ -21,7 +32,7 @@ object PiconotGrammar {
 
   object On {
     def on(name: String)(modifier: String): And = {
-      val open = Array.fill[Int](4)(-1)
+      val open = Array.fill[Int](4)(-1) // Array to hold surroundings information
       new And(name, modifier, open)
     }
   }
@@ -82,7 +93,6 @@ object PiconotGrammar {
       if (can) open(3) = 0 else open(3) = 1
       new And(name, modifier, open)
     }
-
   }
 
   class DirectionNext(name: String, modifier: String, open: Array[Int]) {
