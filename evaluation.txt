@@ -1,0 +1,7 @@
+Hayden Blauzvern and Sarah Gilkinson
+
+In the course of writing our program, we found that separating our terms with
+spaces resulted in fine behavior for the first two, but then broke. Because
+of this, we found we needed to add periods between each pair of words. We also
+found that we need to have quotes around the street names we are passing in.
+

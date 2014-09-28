@@ -2,14 +2,10 @@ package piconot
 
 import picolib.semantics._
 
-object PiconotGrammar extends App {
+object PiconotGrammar {
 
   var rules: List[Rule] = List()
   var streetsToStates: Map[String, String] = Map()
-
-  If.you.are.on("Second")("St.").and.can.go.uptown.and.cannot.go.outta_town.then.teleport.to("First")("St.")
-  If.you.are.on("Main")("St.").and.cannot.go.into_town.and.can.go.downtown.then.go.downtown.on("Second")("St.")
-  rules.foreach(x => println(x))
 
   object If {
     def you = {
@@ -124,6 +120,7 @@ object PiconotGrammar extends App {
   }
 
   //----------------------------------------
+
   def getState(street: String): State = {
     streetsToStates.get(street) match {
       case Some(stateNum:String) => State(stateNum)
