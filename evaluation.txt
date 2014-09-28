@@ -10,3 +10,9 @@ underscore where we originally had spaces, and can't was changed to cannot.
 
 We removed the special comments starting with # and instead just used the 
 standard Scala comments. 
+
+We feel that our syntax changed 3/10. This was due to having to add periods,
+parentheses, and quotes. If we had been able to parse the input before
+processing, we probably would have changed even less.
+
+We feel this was a 2/10 for difficulty of mapping. 
