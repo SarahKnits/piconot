@@ -1,5 +1,9 @@
 package piconot
 
+/*
+ * Authors: Hayden Blauzvern and Sarah Gilkinson
+ */
+
 import java.io.File
 
 import PiconotGrammar._
@@ -9,20 +13,11 @@ import piconot.PiconotGrammar.rules
 
 import scalafx.application.JFXApp
 
+/*
+ * Instruction set to complete the empty grid
+ */
 object Empty extends JFXApp {
   val emptyMaze = Maze("resources" + File.separator + "empty.txt")
-
-  /*
-    0 ***x -> S 0
-    0 *x*S -> E 0
-    0 *E*S -> X 1
-
-    1 x*** -> N 1
-    1 N*x* -> W 2
-
-    2 ***x -> S 2
-    2 **xS -> W 1
-   */
 
   If. you. are. on("Main")("St."). and. can. go. downtown. then. go. downtown. on("Main")("St.")
   If. you. are. on("Main")("St."). and. cannot. go. downtown. and. can. go. outta_town. then. go. outta_town. on("Main")("St.")
