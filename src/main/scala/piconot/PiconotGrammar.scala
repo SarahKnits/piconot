@@ -1,4 +1,3 @@
-//"If you are on", space, street, [north option], [east option], [west option], [south option], ",", space, go, space, street, ".", new line;
 package piconot
 
 
@@ -9,7 +8,8 @@ object PiconotGrammar extends App {
     You
   }
 
-  If.you.are.on("Second")("St.").and.you.can.go.uptown.and.you.cannot.go.outta_town.then.teleport.to("First")("St.")
+  If. you. are. on("Second")("St."). and. you. can. go. uptown. and. you. cannot. go. outta_town. then. teleport. to("First")("St.")
+  //If.you.are.on("Second")("Blvd").then.go.into_town.on("Maine")("St.")
 }
 
 object You {
