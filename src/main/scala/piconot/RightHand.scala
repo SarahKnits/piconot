@@ -5,7 +5,6 @@ import java.io.File
 import PiconotGrammar._
 import picolib.maze.Maze
 import picolib.semantics.{GUIDisplay, TextDisplay, Picobot}
-import piconot.EmptyRoom._
 import piconot.PiconotGrammar.rules
 
 import scalafx.application.JFXApp
