@@ -2,14 +2,13 @@ package piconot
 
 
 object PiconotGrammar extends App {
-  implicit def funcToStr(func:Unit):String = func.toString()
 
   def If = {
     You
   }
 
-  If. you. are. on("Second")("St."). and. you. can. go. uptown. and. you. cannot. go. outta_town. then. teleport. to("First")("St.")
-  //If.you.are.on("Second")("Blvd").then.go.into_town.on("Maine")("St.")
+  If. you. are. on("Second")("St."). and. can. go. uptown. and. cannot. go. outta_town. then. teleport. to("First")("St.")
+  If. you. are. on("Main")("St."). and. cannot. go. into_town. and. can. go. downtown. then. go. downtown. on("Second")("Blvd.")
 }
 
 object You {
@@ -32,26 +31,20 @@ object On {
 }
 
 class And(name:String, modifier:String, open:Array[Int]) {
-  def and:You2 = {
-    new You2(name, modifier, open)
-  }
-  def then:GoTo = {
-    new GoTo(name, modifier, open)
-  }
-}
-
-class GoTo(name:String, modifier:String, open:Array[Int]) {
-  def go:FutureDirection = {
-    new FutureDirection(name, modifier, open)
-  }
-  def teleport = {
-    new On2(name, modifier, open, -1)
-  }
-}
-
-class You2(name:String, modifier:String, open:Array[Int]) {
-  def you:Can = {
+  def and:Can = {
     new Can(name, modifier, open)
+  }
+  def then:GoNext = {
+    new GoNext(name, modifier, open)
+  }
+}
+
+class GoNext(name:String, modifier:String, open:Array[Int]) {
+  def go:DirectionNext = {
+    new DirectionNext(name, modifier, open)
+  }
+  def teleport:OnNext = {
+    new OnNext(name, modifier, open, -1)
   }
 }
 
@@ -90,30 +83,28 @@ class Direction(name:String, modifier:String, open:Array[Int], can:Boolean) {
 
 }
 
-class FutureDirection(name:String, modifier:String, open:Array[Int]) {
-  def uptown:On2 = {
-    new On2(name, modifier, open,0)
+class DirectionNext(name:String, modifier:String, open:Array[Int]) {
+  def uptown:OnNext = {
+    new OnNext(name, modifier, open,0)
   }
-  def outta_town:On2 = {
-    new On2(name, modifier, open, 1)
+  def outta_town:OnNext = {
+    new OnNext(name, modifier, open, 1)
   }
-  def into_town:On2 = {
-    new On2(name, modifier, open, 2)
+  def into_town:OnNext = {
+    new OnNext(name, modifier, open, 2)
   }
-  def downtown:On2 = {
-    new On2(name, modifier, open, 3)
+  def downtown:OnNext = {
+    new OnNext(name, modifier, open, 3)
   }
 }
 
-class On2(name:String, modifier:String, open:Array[Int], finalDirection:Int) {
+class OnNext(name:String, modifier:String, open:Array[Int], finalDirection:Int) {
   def on(name2:String)(modifier2:String) = {
-    println("name: " + name + " modifier: " + modifier +" finalDirection: " + finalDirection )
     for (x <- Range(0,4)) {
       println(open(x))
     }
   }
   def to(name2:String)(modifier2:String) = {
-    println("name: " + name + " modifier: " + modifier +" finalDirection: " + finalDirection )
     for (x <- Range(0,4)) {
       println(open(x))
     }
