@@ -3,12 +3,12 @@
 
 direction to move = "uptown" | "outta_town" | "into_town" | "downtown"
 ability = "can" | "cannot"
-go = "go", space, direction to move, space, "on" | "teleport", space, "to"
+go = "go", separator, direction to move, separator, "on" | "teleport", separator, "to"
 
-north option = space, "and", space, ability, space, "go", space, "uptown";
-east option = space, "and", space, ability, space, "go", space, "outta_town";
-west option = space, "and", space, ability, space, "go", space, "into_town";
-south option = space, "and", space, ability, space, "go", space, "downtown";
+north option = separator, "and", separator, ability, separator, "go", separator, "uptown";
+east option = separator, "and", separator, ability, separator, "go", separator, "outta_town";
+west option = separator, "and", separator, ability, separator, "go", separator, "into_town";
+south option = separator, "and", separator, ability, separator, "go", separator, "downtown";
 
 digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 number = {digit};
@@ -18,12 +18,13 @@ lowercase = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l
 word = uppercase, {lowercase}
 
 street modifier = ("St" | "Ave" | "Blvd" | "Rd" | "Pkwy"), "."
-street = (number | word), space, street modifier
+street = (number | word), separator, street modifier
 
-space = " ";
+separator = ". ";
+quote = """;
 new line = "\n";
 
-command = "If you are on", space, street, [north option], [east option], [west option], [south option], space, "then",
-            space, go, space, street, new line;
+command = "If you are on(", quote, word, quote, ")(", quote, street modifier, quote, "")", separator, [north option], [east option], [west option], [south option], separator, "then",
+            separator, go, separator, street, new line;
 
 program = {command | new line};
